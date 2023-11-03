@@ -2,23 +2,23 @@ const display = document.querySelector(".display");
 const buttons = document.querySelectorAll("button");
 const specialChars = ["%","*","/","-","+","="];
 let output = "";
-const calculate = (val) => {
-    if(val === "=" && output !== "")
+const calculate = (buttonValue) => {
+    if(buttonValue === "=" && output !== "")
     {
         output = eval(output.replace("%","/100"));
     }
-    else if(val==="AC")
+    else if(buttonValue==="AC")
     {
         output="";
     }
-    else if(val === "DEL")
+    else if(buttonValue === "DEL")
     {
         output = output.toString().slice(0,-1);
     }
     else
     {
-        if(output==="" && specialChars.includes(val)) return;
-        output += val;
+        if(output==="" && specialChars.includes(buttonValue)) return;
+        output += buttonValue;
     }
     // console.log(buttonValue);
     display.value=output;
