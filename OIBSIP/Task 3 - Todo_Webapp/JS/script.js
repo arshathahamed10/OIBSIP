@@ -2,7 +2,6 @@ let input = document.querySelector(".inputs input"),
 box = document.querySelector(".box"),
 section = document.querySelectorAll(".sec span"),
 clear = document.querySelector(".clear");
-// let todo = JSON.parse(localStorage.getItem("list"));
 let todo = JSON.parse(localStorage.getItem("list"));
 
 section.forEach(btn => {
@@ -39,7 +38,6 @@ display("all");
 
 function updateStatus(selected)
 {
-    // console.log(selected);
     let name = selected.parentElement.lastElementChild;
     if(selected.checked)
     {
@@ -70,7 +68,6 @@ input.addEventListener("keyup",e=>{
 });
 function remove(id)
 {
-    // console.log(id);
     todo.splice(id,1);
     localStorage.setItem("list",JSON.stringify(todo));
     display("all");
